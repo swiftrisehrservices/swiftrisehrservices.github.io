@@ -6,188 +6,662 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="GravCMS" />
-    <meta name="description" content="SwiftRise HR Services" />
+    <meta name="description" content="SwiftRise HR Services - Your Partner in Human Resource Excellence" />
 
-    <link rel="icon" type="image/png" href="http://localhost/user/themes/quark/images/favicon.png" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="canonical" href="index.html" />
 
-                        
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #4a6fdc;
+            --secondary-color: #3d5ab8;
+            --accent-color: #ff6b6b;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --text-color: #333333;
+            --body-font: 'Poppins', sans-serif;
+        }
+        
+        body {
+            font-family: var(--body-font);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color);
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: -80px;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h3 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            font-size: 2.2rem;
+        }
+        
+        .section-title h3::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card .card-body {
+            padding: 25px;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .why-choose-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+        
+        .why-choose-icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-right: 20px;
+            min-width: 40px;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(74, 111, 220, 0.4);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-heading {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+        }
+        
+        .footer-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-list li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-list a {
+            color: #b8b8b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-list a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b8b8b8;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
             
-    <link href="http://localhost/user/plugins/markdown-notices/assets/notices.css" type="text/css" rel="stylesheet">
-<link href="http://localhost/user/plugins/form/assets/form-styles.css" type="text/css" rel="stylesheet">
-<link href="http://localhost/user/plugins/login/css/login.css" type="text/css" rel="stylesheet">
-<link href="http://localhost/user/themes/quark/css-compiled/spectre.min.css" type="text/css" rel="stylesheet">
-<link href="http://localhost/user/themes/quark/css-compiled/spectre-exp.min.css" type="text/css" rel="stylesheet">
-<link href="http://localhost/user/themes/quark/css-compiled/spectre-icons.min.css" type="text/css" rel="stylesheet">
-<link href="http://localhost/user/themes/quark/css-compiled/theme.min.css" type="text/css" rel="stylesheet">
-<link href="http://localhost/user/themes/quark/css/custom.css" type="text/css" rel="stylesheet">
-<link href="http://localhost/user/themes/quark/css/line-awesome.min.css" type="text/css" rel="stylesheet">
-
-    <script src="http://localhost/system/assets/jquery/jquery-3.x.min.js"></script>
-
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-section {
+                height: 60vh;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+        }
+    </style>
 </head>
-<body id="top" class="title-center title-h1h2 header-fixed header-animated header-transparent">
-    <div id="page-wrapper">
-            <section id="header" class="section">
-            <section class="container grid-lg">
-                <nav class="navbar">
-                    <section class="navbar-section logo">
-                        <a href="index.html" class="navbar-brand mr-10">
-    <img src="http://localhost/user/themes/quark/images/logo/logo1.png" alt="SwiftRise HR Services" />
-</a>                    </section>
-                    <section class="navbar-section desktop-menu">
 
-                        <nav class="dropmenu animated">
-                                                    
-<ul >
-                <li>
-      <a href="index.html" class="active">
-        Home
-      </a>
-          </li>
-  
-</ul>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="SwiftRise HR Services" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-                                                </nav>
-
-                        
-                    </section>
-                </nav>
-            </section>
-        </section>
-        <div class="mobile-menu">
-            <div class="button_container" id="toggle">
-                <span class="top"></span>
-                <span class="middle"></span>
-                <span class="bottom"></span>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to SwiftRise HR Services</h1>
+                <h2>Your Partner in Human Resource Excellence</h2>
+                <a href="#contact" class="btn btn-primary btn-lg mt-4">Get Started Today</a>
             </div>
         </div>
-    
-    
-        <section id="start">
-                    <section id="body-wrapper" class="section">
-                <section class="container grid-lg">
-                                            
-                                            <h1>Welcome to SwiftRise HR Services</h1>
-<h2>Your Partner in Human Resource Excellence</h2>
-<p><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" alt="SwiftRise HR Services" /></p>
-<h3>Comprehensive HR Solutions for Your Business</h3>
-<p>At SwiftRise HR Services, we understand that your people are your greatest asset. We provide end-to-end HR solutions that help businesses thrive in today's competitive landscape.</p>
-<h4>Our Services</h4>
-<ul>
-<li>
-<p><strong>Talent Acquisition &amp; Recruitment</strong></p>
-<ul>
-<li>Strategic hiring solutions</li>
-<li>Candidate screening and assessment</li>
-<li>Employer branding</li>
-</ul>
-</li>
-<li>
-<p><strong>HR Management</strong></p>
-<ul>
-<li>Policy development</li>
-<li>Compliance management</li>
-<li>Employee relations</li>
-</ul>
-</li>
-<li>
-<p><strong>Performance Management</strong></p>
-<ul>
-<li>Performance review systems</li>
-<li>Goal setting and tracking</li>
-<li>Employee development programs</li>
-</ul>
-</li>
-<li>
-<p><strong>HR Technology Solutions</strong></p>
-<ul>
-<li>HRIS implementation</li>
-<li>Digital transformation</li>
-<li>Analytics and reporting</li>
-</ul>
-</li>
-</ul>
-<h3>Why Choose SwiftRise?</h3>
-<ul>
-<li><strong>Expert Team</strong>: Our experienced HR professionals bring decades of combined industry expertise</li>
-<li><strong>Customized Solutions</strong>: Tailored approaches to meet your specific business needs</li>
-<li><strong>Proven Track Record</strong>: Success stories from businesses we've helped transform</li>
-<li><strong>Cost-Effective</strong>: Maximize your HR investment with our efficient solutions</li>
-</ul>
-<h3>Get Started Today</h3>
-<p>Contact us to learn how SwiftRise HR Services can help your business reach new heights.</p>
-<h3>Contact Us Now</h3>
-<div id="contact-form" class="contact-form">
-<form name="contact" method="post" action="index.html#">
-    <div class="form-group">
-        <label for="name">Name *</label>
-        <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-        <label for="email">Email *</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-        <label for="company">Company</label>
-        <input type="text" class="form-control" id="company" name="company">
-    </div>
-    <div class="form-group">
-        <label for="service">Service Interest</label>
-        <select class="form-control" id="service" name="service">
-            <option value="">Select a service</option>
-            <option value="recruitment">Talent Acquisition & Recruitment</option>
-            <option value="management">HR Management & Compliance</option>
-            <option value="performance">Performance Management</option>
-            <option value="technology">HR Technology Solutions</option>
-            <option value="custom">Custom Solutions</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="message">Message *</label>
-        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-    </div>
-    <button type="submit" class="button">Send Message</button>
-</form>
-</div>
-
-                </section>
-            </section>
-                </section>
-
-    </div>
-
-            <section id="footer" class="section bg-gray">
-    <section class="container grid-lg">
-        <p><a href="https://getgrav.org">Grav</a> was <i class="fa fa-code"></i> with <i class="fa fa-heart-o pulse "></i> by <a href="https://trilby.media">Trilby Media</a>.</p>
     </section>
-</section>
-    
-        <div class="mobile-container">
-        <div class="overlay" id="overlay">
-            <div class="mobile-logo">
-                <a href="index.html" class="navbar-brand mr-10">
-    <img src="http://localhost/user/themes/quark/images/logo/logo1.png" alt="SwiftRise HR Services" />
-</a>            </div>
-            <nav class="overlay-menu">
-                
-<ul class="tree">
-                <li>
-      <a href="index.html" class="active">
-        Home
-      </a>
-          </li>
-  
-</ul>
 
-            </nav>
+    <!-- Introduction Section -->
+    <section id="intro">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3>Comprehensive HR Solutions for Your Business</h3>
+                    <p class="lead">At SwiftRise HR Services, we understand that your people are your greatest asset. We provide end-to-end HR solutions that help businesses thrive in today's competitive landscape.</p>
+                    <p>Our team of dedicated HR professionals works closely with you to develop strategies that align with your business goals, improve employee satisfaction, and drive organizational growth.</p>
+                    <a href="#services" class="btn btn-primary mt-3">Explore Our Services</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="HR Solutions" class="img-fluid rounded shadow">
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h3>Our Services</h3>
+                <p>Tailored HR solutions designed to meet your specific business needs</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Talent Acquisition & Recruitment</h4>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-primary me-2"></i> Strategic hiring solutions</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Candidate screening</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Employer branding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h4>HR Management</h4>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-primary me-2"></i> Policy development</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Compliance management</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Employee relations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Performance Management</h4>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-primary me-2"></i> Review systems</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Goal setting and tracking</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Development programs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card service-card">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4>HR Technology Solutions</h4>
+                            <ul class="list-unstyled text-start">
+                                <li><i class="fas fa-check text-primary me-2"></i> HRIS implementation</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Digital transformation</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Analytics and reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Why Choose SwiftRise" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <div class="section-title text-start">
+                        <h3>Why Choose SwiftRise?</h3>
+                    </div>
+                    
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <h5>Expert Team</h5>
+                            <p>Our experienced HR professionals bring decades of combined industry expertise to help solve your most complex HR challenges.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div>
+                            <h5>Customized Solutions</h5>
+                            <p>We develop tailored approaches to meet your specific business needs, ensuring optimal results for your organization.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div>
+                            <h5>Proven Track Record</h5>
+                            <p>Our portfolio includes success stories from businesses across various industries that we've helped transform.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div>
+                            <h5>Cost-Effective</h5>
+                            <p>Maximize your HR investment with our efficient solutions designed to deliver exceptional value.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h3>Ready to transform your HR operations?</h3>
+            <p class="lead mb-4">Let us help you build a high-performing workforce that drives business success.</p>
+            <a href="#contact" class="btn btn-light btn-lg">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h3>Contact Us Now</h3>
+                <p>Get in touch to learn how SwiftRise HR Services can help your business reach new heights</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info mb-5 mb-lg-0">
+                        <h4>Contact Information</h4>
+                        <p>Our team is ready to answer your questions and discuss how our services can benefit your organization.</p>
+                        
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Visit Us</h5>
+                                <p>123 Business Avenue, Suite 500<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-phone fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Call Us</h5>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-envelope fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Email Us</h5>
+                                <p>info@swiftrisehr.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-clock fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5>Business Hours</h5>
+                                <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday & Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-form">
+                        <form id="contactForm" action="https://formspree.io/your-email@example.com" method="POST">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name">Name *</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" class="form-control" id="company" name="company">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Service Interest</label>
+                                <select class="form-control" id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="recruitment">Talent Acquisition & Recruitment</option>
+                                    <option value="management">HR Management & Compliance</option>
+                                    <option value="performance">Performance Management</option>
+                                    <option value="technology">HR Technology Solutions</option>
+                                    <option value="custom">Custom Solutions</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <img src="images/logo-white.png" alt="SwiftRise HR Services" class="mb-4" height="60">
+                    <p>SwiftRise HR Services provides comprehensive human resource solutions to help businesses of all sizes optimize their workforce and achieve sustainable growth.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Our Services</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Talent Acquisition</a></li>
+                        <li><a href="#">HR Management</a></li>
+                        <li><a href="#">Performance Management</a></li>
+                        <li><a href="#">HR Technology Solutions</a></li>
+                        <li><a href="#">Employee Training</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading">Newsletter</h5>
+                    <p>Subscribe to our newsletter for the latest HR insights and updates.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 SwiftRise HR Services. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>
     
-    <script src="http://localhost/user/themes/quark/js/jquery.treemenu.js"></script>
-<script src="http://localhost/user/themes/quark/js/site.js"></script>
-
-
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Navbar scroll behavior
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            }
+        });
+        
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // You would typically perform an AJAX request here
+                // For demonstration, we'll just show an alert
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+    </script>
 </body>
 </html>
