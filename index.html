@@ -9,14 +9,14 @@
     <meta name="description" content="SwiftRise HR Services - Your Partner in Human Resource Excellence" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
     <link rel="canonical" href="index.html" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap">
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -24,90 +24,224 @@
     <!-- Custom CSS -->
     <style>
         :root {
-            --primary-color: #4a6fdc;
-            --secondary-color: #3d5ab8;
-            --accent-color: #ff6b6b;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-            --text-color: #333333;
-            --body-font: 'Poppins', sans-serif;
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #f72585;
+            --light-color: #ffffff;
+            --dark-color: #212529;
+            --text-color: #343a40;
+            --body-font: 'DM Sans', sans-serif;
+            --heading-font: 'Poppins', sans-serif;
+            --transition: all 0.3s ease-in-out;
         }
         
         body {
             font-family: var(--body-font);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
             padding-top: 80px;
+            overflow-x: hidden;
+            background-color: #ffffff;
         }
         
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        p {
+            margin-bottom: 1.25rem;
+        }
+        
+        /* Navbar Styles */
         .navbar {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 12px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
         }
         
         .navbar-brand img {
-            height: 50px;
+            height: 45px;
+            transition: var(--transition);
+        }
+        
+        .navbar-scrolled .navbar-brand img {
+            height: 40px;
         }
         
         .nav-link {
             font-weight: 500;
             color: var(--dark-color);
-            margin: 0 10px;
-            transition: all 0.3s ease;
+            position: relative;
+            margin: 0 15px;
+            transition: var(--transition);
+            padding: 5px 0;
         }
         
-        .nav-link:hover, .nav-link.active {
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover {
             color: var(--primary-color);
         }
         
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Hero Section */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(to right, rgba(67, 97, 238, 0.9), rgba(58, 12, 163, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            height: 70vh;
+            height: 85vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
-            margin-top: -40px;
-            padding-top: 60px;
+            margin-top: -80px;
+            padding-top: 80px;
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0));
+            z-index: 1;
         }
         
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 600;
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            display: block;
+            font-weight: 300;
         }
         
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+        /* Buttons */
+        .btn {
+            padding: 12px 28px;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.875rem;
         }
         
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+        .btn-lg {
+            padding: 15px 35px;
+            font-size: 1rem;
         }
         
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn-primary:hover::before {
+            width: 100%;
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            border: none;
+        }
+        
+        .btn-light:hover {
+            background: white;
+            color: var(--secondary-color);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Section Styles */
         section {
-            padding: 80px 0;
+            padding: 100px 0;
+            position: relative;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
         
         .section-title h3 {
             position: relative;
             display: inline-block;
             margin-bottom: 20px;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
             font-size: 2.2rem;
+            color: var(--dark-color);
         }
         
         .section-title h3::after {
@@ -116,87 +250,284 @@
             left: 50%;
             bottom: 0;
             transform: translateX(-50%);
-            width: 50px;
+            width: 70px;
             height: 3px;
-            background-color: var(--primary-color);
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
         }
         
+        .section-title p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Service Cards */
         .service-card {
             border: none;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             margin-bottom: 30px;
             height: 100%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 1;
+            background-color: #ffffff;
+        }
+        
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to bottom, rgba(67, 97, 238, 0.05), rgba(67, 97, 238, 0));
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .service-card:hover::before {
+            height: 100%;
         }
         
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
         
         .service-card .card-body {
-            padding: 25px;
+            padding: 30px;
         }
         
         .service-icon {
-            font-size: 2.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(58, 12, 163, 0.1));
+            border-radius: 50%;
+            margin-bottom: 25px;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            font-size: 2rem;
+            transition: var(--transition);
         }
         
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .service-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover h4 {
+            color: var(--primary-color);
+        }
+        
+        .service-card ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .service-card ul li i {
+            font-size: 0.875rem;
+        }
+        
+        /* Why Choose Us */
         .why-choose-item {
             display: flex;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            transition: var(--transition);
         }
         
         .why-choose-icon {
-            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(58, 12, 163, 0.1));
+            border-radius: 50%;
+            margin-right: 25px;
             color: var(--primary-color);
-            margin-right: 20px;
-            min-width: 40px;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: var(--transition);
         }
         
+        .why-choose-item:hover .why-choose-icon {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.2);
+        }
+        
+        .why-choose-item h5 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+        
+        .why-choose-item:hover h5 {
+            color: var(--primary-color);
+        }
+        
+        /* Contact Section */
         .contact-form {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 8px;
         }
         
         .form-control {
-            padding: 12px 15px;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-radius: 8px;
             margin-bottom: 20px;
-            border: 1px solid #ddd;
+            border: 1px solid #e0e0e0;
+            transition: var(--transition);
+            font-size: 1rem;
+            background-color: #ffffff;
+            color: var(--text-color);
         }
         
-        .btn-primary {
-            background-color: var(--primary-color);
+        .form-control:focus {
+            box-shadow: none;
             border-color: var(--primary-color);
-            padding: 12px 30px;
-            font-weight: 500;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+            background-color: #ffffff;
+            color: var(--text-color);
         }
         
-        .btn-primary:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(74, 111, 220, 0.4);
+        .form-select {
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            transition: var(--transition);
+            font-size: 1rem;
+            height: auto;
         }
         
+        .form-select:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+        }
+        
+        .contact-info {
+            padding: 0 20px;
+        }
+        
+        .contact-info h4 {
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 30px;
+            color: #6c757d;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(58, 12, 163, 0.1));
+            border-radius: 50%;
+            margin-right: 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-item h5 {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-item p {
+            margin-bottom: 0;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.2;
+        }
+        
+        /* Footer */
         footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 50px 0 20px;
+            background-color: #f8f9fa;
+            color: var(--text-color);
+            padding: 80px 0 20px;
+            position: relative;
+        }
+        
+        .footer-logo {
+            height: 45px;
+            width: auto;
+            margin-bottom: 25px;
+            display: block;
         }
         
         .footer-heading {
             font-size: 1.3rem;
             margin-bottom: 25px;
+            color: var(--dark-color);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
         }
         
         .footer-list {
@@ -205,67 +536,377 @@
         }
         
         .footer-list li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         .footer-list a {
-            color: #b8b8b8;
+            color: #6c757d;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            position: relative;
+            padding-left: 20px;
+            display: block;
+        }
+        
+        .footer-list a::before {
+            content: "\f105";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-color);
+            transition: var(--transition);
         }
         
         .footer-list a:hover {
-            color: white;
-            padding-left: 5px;
+            color: var(--primary-color);
+            padding-left: 25px;
         }
         
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #b8b8b8;
+        .footer-list a:hover::before {
+            left: 5px;
+        }
+        
+        .footer-newsletter p {
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            position: relative;
+        }
+        
+        .newsletter-form .form-control {
+            padding-right: 50px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            color: var(--text-color);
+            border-radius: 30px;
+        }
+        
+        .newsletter-form .form-control::placeholder {
+            color: #6c757d;
+        }
+        
+        .newsletter-form .btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .newsletter-form .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .social-icons {
+            margin-top: 30px;
         }
         
         .social-icons a {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             width: 40px;
             height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(67, 97, 238, 0.1);
             border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            color: white;
             margin-right: 10px;
-            transition: all 0.3s ease;
+            color: var(--primary-color);
+            font-size: 1rem;
+            transition: var(--transition);
         }
         
         .social-icons a:hover {
             background-color: var(--primary-color);
-            transform: translateY(-3px);
+            color: white;
         }
         
-        @media (max-width: 768px) {
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #6c757d;
+        }
+        
+        /* Fixed floating button */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(67, 97, 238, 0.4);
+            z-index: 999;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(67, 97, 238, 0.4);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        
+        /* Responsive CSS */
+        @media (max-width: 1199px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .navbar-toggler {
+                border: none;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                position: relative;
+                background: transparent;
+                margin-left: 15px;
+            }
+            
+            .navbar-toggler:focus {
+                box-shadow: none;
+                outline: none;
+            }
+            
+            .navbar-toggler-icon {
+                background-image: none !important;
+                position: relative;
+                transition: var(--transition);
+                width: 24px;
+                height: 2px;
+                background-color: var(--dark-color);
+                display: block;
+                margin: 5px auto;
+            }
+            
+            .navbar-toggler-icon::before,
+            .navbar-toggler-icon::after {
+                content: '';
+                position: absolute;
+                width: 24px;
+                height: 2px;
+                background-color: var(--dark-color);
+                transition: var(--transition);
+                left: 0;
+            }
+            
+            .navbar-toggler-icon::before {
+                top: -6px;
+            }
+            
+            .navbar-toggler-icon::after {
+                bottom: -6px;
+            }
+            
+            .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+                background-color: transparent;
+            }
+            
+            .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+                transform: rotate(45deg);
+                top: 0;
+            }
+            
+            .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+                transform: rotate(-45deg);
+                bottom: 0;
+            }
+            
+            .navbar-collapse {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                margin-top: 15px;
+                max-height: 80vh;
+                overflow-y: auto;
+                transition: all 0.3s ease-in-out;
+            }
+            
+            .navbar-collapse.collapsing {
+                height: auto;
+            }
+            
+            .navbar-collapse.show {
+                display: block;
+            }
+            
+            .nav-link {
+                margin: 8px 0;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                transition: var(--transition);
+            }
+            
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-link:hover,
+            .nav-link.active {
+                color: var(--primary-color);
+                padding-left: 10px;
+            }
+            
+            .hero-section {
+                height: auto;
+                min-height: 60vh;
+                padding: 120px 0 60px;
+            }
+            
+            .hero-content {
+                padding: 0 20px;
+            }
+            
+            .service-card {
+                margin-bottom: 20px;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+            
+            .why-choose-item {
+                margin-bottom: 25px;
+            }
+            
+            .footer-heading {
+                margin-top: 30px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 2.2rem;
             }
             
             h2 {
                 font-size: 1.8rem;
             }
             
-            .hero-section {
-                height: 60vh;
+            .section-title h3 {
+                font-size: 1.8rem;
             }
             
-            section {
-                padding: 50px 0;
+            .btn-lg {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .contact-info {
+                margin-bottom: 40px;
+            }
+            
+            .contact-item {
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .btn-lg {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+            
+            .service-card .card-body {
+                padding: 25px;
+            }
+            
+            .contact-form {
+                padding: 25px;
             }
         }
     </style>
 </head>
 
 <body>
+    <!-- Back to top button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Header -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -279,16 +920,16 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
+                            <a class="nav-link" href="#home" data-section="home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#services">Services</a>
+                            <a class="nav-link" href="#services" data-section="services">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">About Us</a>
+                            <a class="nav-link" href="#about" data-section="about">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link" href="#contact" data-section="contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -297,12 +938,16 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="home" data-section="home">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-content animate-fadeInUp">
+                <span class="hero-subtitle">Your Partner in HR Excellence</span>
                 <h1>Welcome to SwiftRise HR Services</h1>
-                <h2>Your Partner in Human Resource Excellence</h2>
-                <a href="#contact" class="btn btn-primary btn-lg mt-4">Get Started Today</a>
+                <p class="lead">We help businesses optimize their workforce with innovative HR solutions</p>
+                <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+                    <a href="#services" class="btn btn-primary btn-lg">Explore Services</a>
+                    <a href="#contact" class="btn btn-light btn-lg">Contact Us</a>
+                </div>
             </div>
         </div>
     </section>
@@ -315,17 +960,20 @@
                     <h3>Comprehensive HR Solutions for Your Business</h3>
                     <p class="lead">At SwiftRise HR Services, we understand that your people are your greatest asset. We provide end-to-end HR solutions that help businesses thrive in today's competitive landscape.</p>
                     <p>Our team of dedicated HR professionals works closely with you to develop strategies that align with your business goals, improve employee satisfaction, and drive organizational growth.</p>
-                    <a href="#services" class="btn btn-primary mt-3">Explore Our Services</a>
+                    <a href="#services" class="btn btn-primary mt-3">Learn More</a>
                 </div>
-                <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="HR Solutions" class="img-fluid rounded shadow">
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="position-relative overflow-hidden rounded-4 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1530099486328-e021101a494a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="HR Solutions" class="img-fluid rounded-4">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to right, rgba(67, 97, 238, 0.1), rgba(58, 12, 163, 0.1));"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="bg-light">
+    <section id="services" data-section="services" class="bg-light">
         <div class="container">
             <div class="section-title">
                 <h3>Our Services</h3>
@@ -334,12 +982,12 @@
             
             <div class="row">
                 <div class="col-md-6 col-lg-3">
-                    <div class="card service-card">
+                    <div class="service-card">
                         <div class="card-body text-center">
                             <div class="service-icon">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <h4>Talent Acquisition & Recruitment</h4>
+                            <h4>Talent Acquisition</h4>
                             <ul class="list-unstyled text-start">
                                 <li><i class="fas fa-check text-primary me-2"></i> Strategic hiring solutions</li>
                                 <li><i class="fas fa-check text-primary me-2"></i> Candidate screening</li>
@@ -350,7 +998,7 @@
                 </div>
                 
                 <div class="col-md-6 col-lg-3">
-                    <div class="card service-card">
+                    <div class="service-card">
                         <div class="card-body text-center">
                             <div class="service-icon">
                                 <i class="fas fa-clipboard-list"></i>
@@ -366,7 +1014,7 @@
                 </div>
                 
                 <div class="col-md-6 col-lg-3">
-                    <div class="card service-card">
+                    <div class="service-card">
                         <div class="card-body text-center">
                             <div class="service-icon">
                                 <i class="fas fa-chart-line"></i>
@@ -382,12 +1030,12 @@
                 </div>
                 
                 <div class="col-md-6 col-lg-3">
-                    <div class="card service-card">
+                    <div class="service-card">
                         <div class="card-body text-center">
                             <div class="service-icon">
                                 <i class="fas fa-laptop-code"></i>
                             </div>
-                            <h4>HR Technology Solutions</h4>
+                            <h4>HR Technology</h4>
                             <ul class="list-unstyled text-start">
                                 <li><i class="fas fa-check text-primary me-2"></i> HRIS implementation</li>
                                 <li><i class="fas fa-check text-primary me-2"></i> Digital transformation</li>
@@ -401,11 +1049,14 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="about">
+    <section id="about" data-section="about">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Why Choose SwiftRise" class="img-fluid rounded shadow">
+                    <div class="position-relative overflow-hidden rounded-4 shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Why Choose SwiftRise" class="img-fluid rounded-4">
+                        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to right, rgba(67, 97, 238, 0.1), rgba(58, 12, 163, 0.1));"></div>
+                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="section-title text-start">
@@ -457,31 +1108,35 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section class="bg-primary text-white text-center py-5">
+    <section class="cta-section">
         <div class="container">
-            <h3>Ready to transform your HR operations?</h3>
-            <p class="lead mb-4">Let us help you build a high-performing workforce that drives business success.</p>
-            <a href="#contact" class="btn btn-light btn-lg">Contact Us Today</a>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white mb-4">Ready to Transform Your HR Operations?</h2>
+                    <p class="text-white-50 mb-4">Let us help you build a high-performing workforce that drives business success.</p>
+                    <a href="#contact" class="btn btn-light btn-lg">Contact Us Today</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" data-section="contact">
         <div class="container">
             <div class="section-title">
-                <h3>Contact Us Now</h3>
+                <h3>Contact Us</h3>
                 <p>Get in touch to learn how SwiftRise HR Services can help your business reach new heights</p>
             </div>
             
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="contact-info mb-5 mb-lg-0">
+                    <div class="contact-info">
                         <h4>Contact Information</h4>
                         <p>Our team is ready to answer your questions and discuss how our services can benefit your organization.</p>
                         
-                        <div class="d-flex mb-3">
-                            <div class="me-3 text-primary">
-                                <i class="fas fa-map-marker-alt fa-2x"></i>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
                                 <h5>Visit Us</h5>
@@ -489,9 +1144,9 @@
                             </div>
                         </div>
                         
-                        <div class="d-flex mb-3">
-                            <div class="me-3 text-primary">
-                                <i class="fas fa-phone fa-2x"></i>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
                             </div>
                             <div>
                                 <h5>Call Us</h5>
@@ -499,9 +1154,9 @@
                             </div>
                         </div>
                         
-                        <div class="d-flex mb-3">
-                            <div class="me-3 text-primary">
-                                <i class="fas fa-envelope fa-2x"></i>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
                             </div>
                             <div>
                                 <h5>Email Us</h5>
@@ -509,9 +1164,9 @@
                             </div>
                         </div>
                         
-                        <div class="d-flex">
-                            <div class="me-3 text-primary">
-                                <i class="fas fa-clock fa-2x"></i>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
                             </div>
                             <div>
                                 <h5>Business Hours</h5>
@@ -523,30 +1178,32 @@
                 
                 <div class="col-lg-6">
                     <div class="contact-form">
-                        <form id="contactForm" action="https://formspree.io/your-email@example.com" method="POST">
+                        <form id="contactForm" action="#" method="POST">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="name">Name *</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name *</label>
+                                        <input type="text" class="form-control" id="name" name="name" required minlength="2">
+                                        <div class="invalid-feedback">Please enter your name</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="email">Email *</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email *</label>
+                                        <input type="email" class="form-control" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                        <div class="invalid-feedback">Please enter a valid email address</div>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="form-group">
-                                <label for="company">Company</label>
+                            <div class="mb-3">
+                                <label for="company" class="form-label">Company</label>
                                 <input type="text" class="form-control" id="company" name="company">
                             </div>
                             
-                            <div class="form-group">
-                                <label for="service">Service Interest</label>
-                                <select class="form-control" id="service" name="service">
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Service Interest</label>
+                                <select class="form-select" id="service" name="service">
                                     <option value="">Select a service</option>
                                     <option value="recruitment">Talent Acquisition & Recruitment</option>
                                     <option value="management">HR Management & Compliance</option>
@@ -556,9 +1213,10 @@
                                 </select>
                             </div>
                             
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required minlength="10"></textarea>
+                                <div class="invalid-feedback">Please enter a message (minimum 10 characters)</div>
                             </div>
                             
                             <button type="submit" class="btn btn-primary w-100">Send Message</button>
@@ -574,9 +1232,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <img src="images/logo-white.png" alt="SwiftRise HR Services" class="mb-4" height="60">
+                    <img src="assets/images/logo.png" alt="SwiftRise HR Services" class="footer-logo">
                     <p>SwiftRise HR Services provides comprehensive human resource solutions to help businesses of all sizes optimize their workforce and achieve sustainable growth.</p>
-                    <div class="social-icons mt-4">
+                    <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -587,7 +1245,7 @@
                 <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
                     <h5 class="footer-heading">Quick Links</h5>
                     <ul class="footer-list">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#home">Home</a></li>
                         <li><a href="#services">Our Services</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact Us</a></li>
@@ -609,17 +1267,17 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-heading">Newsletter</h5>
                     <p>Subscribe to our newsletter for the latest HR insights and updates.</p>
-                    <form>
-                        <div class="input-group mb-3">
+                    <form class="newsletter-form">
+                        <div class="input-group">
                             <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
-                            <button class="btn btn-primary" type="button">Subscribe</button>
+                            <button class="btn" type="button"><i class="fas fa-paper-plane"></i></button>
                         </div>
                     </form>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 SwiftRise HR Services. All Rights Reserved.</p>
+                <p>&copy; 2024 SwiftRise HR Services. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -629,6 +1287,29 @@
     
     <!-- Custom JS -->
     <script>
+        // Mobile menu handling
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = navbarCollapse.contains(event.target) || navbarToggler.contains(event.target);
+            
+            if (!isClickInside && navbarCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+        
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -642,9 +1323,19 @@
                 // Add active class to clicked link
                 this.classList.add('active');
                 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
         
@@ -652,13 +1343,13 @@
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
-                navbar.classList.add('shadow');
+                navbar.classList.add('scrolled');
             } else {
-                navbar.classList.remove('shadow');
+                navbar.classList.remove('scrolled');
             }
 
             // Get all sections
-            const sections = document.querySelectorAll('section[id]');
+            const sections = document.querySelectorAll('section[data-section]');
             
             // Get current scroll position
             const scrollPosition = window.scrollY + 100;
@@ -666,7 +1357,7 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
+                const sectionId = section.getAttribute('data-section');
                 
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                     // Remove active class from all nav links
@@ -675,7 +1366,7 @@
                     });
                     
                     // Add active class to current section's nav link
-                    const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                    const correspondingLink = document.querySelector(`.nav-link[data-section="${sectionId}"]`);
                     if (correspondingLink) {
                         correspondingLink.classList.add('active');
                     }
@@ -683,16 +1374,55 @@
             });
         });
         
-        // Form submission handling
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form validation and submission
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // You would typically perform an AJAX request here
-                // For demonstration, we'll just show an alert
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
+                if (!this.checkValidity()) {
+                    e.stopPropagation();
+                    this.classList.add('was-validated');
+                    return;
+                }
+                
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission (replace with actual form submission)
+                setTimeout(() => {
+                    // Reset form
+                    this.reset();
+                    this.classList.remove('was-validated');
+                    
+                    // Show success message
+                    alert('Thank you for your message! We will get back to you soon.');
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 1500);
             });
         }
     </script>
